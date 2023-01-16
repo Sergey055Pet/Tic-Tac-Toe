@@ -1,0 +1,173 @@
+@font-face {
+  font-family: "Newon";
+  src: url(../font/Newon.woff), url(../font/Newon.woff2);
+}
+
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  user-select: none;
+}
+body {
+  width: 100vw;
+  height: 100vh;
+  font-size: 20px;
+  overflow: hidden;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+.container {
+  width: 100%;
+  height: 100vh;
+  background-image: url("../image/bg.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+}
+.board_contain {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .borad {
+    width: 90%;
+    font-family: "Newon", sans-serif;
+    aspect-ratio: 1/1;
+    background-color: rgba(238, 130, 238, 0.1);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    backdrop-filter: blur(5px);
+    .cell {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 10vw;
+      width: 100%;
+      aspect-ratio: 1/1;
+      border: 1px solid violet;
+      text-shadow: 0 0 5px #fff, 0 0 10px rgb(131, 255, 6), 0 0 15px #ffffff,
+        0 0 20px #0afc26, 0 0 25px #f3f2f7, 0 0 30px #e60000, 0 0 35px #00e600;
+    }
+  }
+}
+.cell {
+  cursor: pointer;
+}
+.score_contain {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  .title {
+    font-family: "Newon", sans-serif;
+    font-size: 8vw;
+    animation: color-change 2s infinite alternate-reverse;
+  }
+}
+@keyframes color-change {
+  0% {
+    color: rgb(255, 0, 0);
+    text-shadow: 0 0 5px #fff, 0 0 10px rgb(10, 0, 0), 0 0 15px #00e6e6,
+      0 0 20px #0073e6, 0 0 25px #32e600, 0 0 30px #e60000, 0 0 35px #b4e600;
+  }
+  50% {
+    color: rgb(0, 0, 255);
+    text-shadow: 0 0 5px #fff, 0 0 10px rgb(255, 0, 0), 0 0 15px #1be600,
+      0 0 20px #0073e6, 0 0 25px #8ec2f7, 0 0 30px #7bb7f2, 0 0 35px #e62a00;
+  }
+  100% {
+    color: rgb(0, 255, 0);
+    text-shadow: 0 0 5px #fff, 0 0 10px rgb(68, 6, 255), 0 0 15px #f211f6,
+      0 0 20px #00e61b, 0 0 25px #d3e600, 0 0 30px #cb00e6, 0 0 35px #00e600;
+  }
+}
+.tablo {
+  width: 100%;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.players {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  font-size: 3vw;
+  background-color: rgba(255, 255, 255, 0.051);
+  border-radius: 15px;
+  padding: 5px;
+  backdrop-filter: blur(10px);
+  span {
+    font-size: 4vw;
+  }
+  .X {
+    color: rgba(255, 0, 0, 0.7);
+  }
+  .O {
+    color: rgba(0, 0, 255, 0.7);
+  }
+  .score {
+    color: whitesmoke;
+  }
+  .playerName {
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #e3e7eb, 0 0 20px #f0f2f5,
+      0 0 25px #e0e4e7, 0 0 30px #eff1f4, 0 0 35px #dbdfe3;
+  }
+}
+.playerName {
+  font-family: "Newon", sans-serif;
+}
+.button {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  font-size: 1.5vw;
+  gap: 10px;
+  .tryAgain_btn {
+    color: #db3eb1;
+    border: 5px solid #db3eb1;
+    border-radius: 15px;
+    padding: 5px;
+    font-family: cursive;
+    cursor: pointer;
+    font-weight: bold;
+    filter: drop-shadow(0 0 15px #db3eb1) drop-shadow(0 0 50px #db3eb1)
+      contrast(2) brightness(2);
+    transition: 0.5s;
+    &:hover {
+      color: black;
+      background-color: #db3eb1;
+      filter: drop-shadow(0 0 20px #db3eb1) contrast(2) brightness(2);
+    }
+  }
+  .reset_btn {
+    color: greenyellow;
+    border: 5px solid greenyellow;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 15px;
+    padding: 5px;
+    font-family: cursive;
+    cursor: pointer;
+    font-weight: bold;
+    filter: drop-shadow(0 0 15px greenyellow) drop-shadow(0 0 50px greenyellow)
+      contrast(2) brightness(2);
+    transition: 0.5s;
+    &:hover {
+      color: black;
+      background-color: greenyellow;
+      filter: drop-shadow(0 0 20px greenyellow) contrast(2) brightness(2);
+    }
+  }
+}
+
+.selected {
+  cursor: default;
+}
